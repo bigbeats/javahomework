@@ -16,7 +16,9 @@ public class Test2 {
 		System.out.print("Enter n:"); // 输入矩阵的阶数
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
+		if(n>0)
 		printMatrix(n); // 调用输出矩阵函数
+		else System.out.print("输入不合法");
 		input.close();
 	}
 }
