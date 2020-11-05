@@ -1,24 +1,26 @@
 import java.util.Scanner;
 
 public class Test2 {
-	public static void printMatrix(int n) { // ¶¨Òå´òÓ¡¾ØÕóº¯Êı
-		int m,count=0; // ÉùÃ÷ÕûÊımÀ´ÊÕËæ»úÊı£»ÉùÃ÷ÕûÊıcountÀ´±ê¼Ç¾ØÕó½×ÊınµÄ±¶Êı£¬ÊµÏÖ»»ĞĞ
-		for(int i=0;i<n*n;i++) { // ÀûÓÃÑ­»·´òÓ¡£¬²¢ÇÒÓö¾ØÕó½×ÊınµÄ±¶Êı»»ĞĞ£¬Êä³öÕâ¸ö¾ØÕó
-		m=(int)(Math.random()*2);
-		System.out.print(m+" ");
-		count++;
-		if(count%n==0)
-			System.out.print("\n");	// ÓönµÄ±¶Êı»»ĞĞ£¬Êä³öÕâ¸ö¾ØÕó		
+	public static void printMatrix(int n) { // å®šä¹‰æ‰“å°çŸ©é˜µå‡½æ•°
+		int m,count=0; // å£°æ˜æ•´æ•°mæ¥æ”¶éšæœºæ•°ï¼›å£°æ˜æ•´æ•°countæ¥æ ‡è®°çŸ©é˜µé˜¶æ•°nçš„å€æ•°ï¼Œå®ç°æ¢è¡Œ
+		for(int i=0;i<n*n;i++) { // åˆ©ç”¨å¾ªç¯æ‰“å°ï¼Œå¹¶ä¸”é‡çŸ©é˜µé˜¶æ•°nçš„å€æ•°æ¢è¡Œï¼Œè¾“å‡ºè¿™ä¸ªçŸ©é˜µ
+			m=(int)(Math.random()*2);
+			System.out.print(m+" ");
+			count++;
+			if(count%n==0){
+				System.out.print("\n");	// é‡nçš„å€æ•°æ¢è¡Œï¼Œè¾“å‡ºè¿™ä¸ªçŸ©é˜µ
+			}
 		}
 	}
 	
 	public static void main(String[] args) {
-		System.out.print("Enter n:"); // ÊäÈë¾ØÕóµÄ½×Êı
+		System.out.print("Enter n:"); // è¾“å…¥çŸ©é˜µçš„é˜¶æ•°
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
-		if(n>0)
-		printMatrix(n); // µ÷ÓÃÊä³ö¾ØÕóº¯Êı
-		else System.out.print("ÊäÈë²»ºÏ·¨");
+		if(n>0){
+			printMatrix(n); // è°ƒç”¨è¾“å‡ºçŸ©é˜µå‡½æ•°
+		}
+		else System.out.print("è¾“å…¥ä¸åˆæ³•");
 		input.close();
 	}
 }
