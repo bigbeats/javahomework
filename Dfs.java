@@ -19,11 +19,11 @@ public class Dfs {
 	}
 	
 	public static String convertToHexString(byte data[]) { // @2.由于MessageDigest对象的digest()方法返回的是字符数组，要得到十六进制的sha值还需要转为字符串
-									//（tree的value包括了文件名（字符串）、子文件夹名（字符串）、子文件夹的treekey（字符串）、子文件的blobkey（字符串）
+								//（tree的value包括了文件名（字符串）、子文件夹名（字符串）、子文件夹的treekey（字符串）、子文件的blobkey（字符串）
 		StringBuffer strBuffer = new StringBuffer(); // 用StringBuffer去建立可变字符串对象
 		for (int i = 0; i < data.length; i++) {
 			strBuffer.append(Integer.toHexString(0xff & data[i])); // 用十六进制数oxff与某个字节值做按位与运算，
-																	// 只保留了32位的最后8位，保证负数转换成十六进制不会出错
+										// 只保留了32位的最后8位，保证负数转换成十六进制不会出错
 		}
 		return strBuffer.toString();
 	}
@@ -46,7 +46,7 @@ public class Dfs {
 						m.update(result.getBytes()); // #1.用blobkey值更新treekey值
 				// $1.2 对文件的名字计算sha值
 						m.update(fs[i].getName().getBytes()); // #2.用文件名更新treekey值，getBytes()得到一个操作系统默认的编码格式的字节数组
-															  // getBytes(String decode)方法会根据指定的decode编码返回某字符串在该编码下的byte数组
+										// getBytes(String decode)方法会根据指定的decode编码返回某字符串在该编码下的byte数组
 				}
 				// 2.对文件夹的操作
 				// $2.1 对该文件夹名计算sha值
